@@ -1,0 +1,12 @@
+CREATE CONSTRAINT product_code IF NOT EXISTS FOR (n:Product)    REQUIRE n.code IS UNIQUE;
+CREATE CONSTRAINT ingredient_id IF NOT EXISTS FOR (n:Ingredient) REQUIRE n.id IS UNIQUE;
+CREATE CONSTRAINT additive_id  IF NOT EXISTS FOR (n:Additive)   REQUIRE n.id IS UNIQUE;
+CREATE CONSTRAINT allergen_id  IF NOT EXISTS FOR (n:Allergen)   REQUIRE n.id IS UNIQUE;
+CREATE CONSTRAINT label_id     IF NOT EXISTS FOR (n:Label)      REQUIRE n.id IS UNIQUE;
+CREATE CONSTRAINT brand_name   IF NOT EXISTS FOR (n:Brand)      REQUIRE n.name IS UNIQUE;
+CREATE CONSTRAINT country_id   IF NOT EXISTS FOR (n:Country)    REQUIRE n.id IS UNIQUE;
+CREATE CONSTRAINT subgroup     IF NOT EXISTS FOR (n:SubGroup)   REQUIRE n.name IS UNIQUE;
+CREATE CONSTRAINT foodgroup    IF NOT EXISTS FOR (n:FoodGroup)  REQUIRE n.name IS UNIQUE;
+CREATE INDEX product_nutri IF NOT EXISTS FOR (n:Product) ON (n.nutriscore);
+CREATE INDEX product_nova  IF NOT EXISTS FOR (n:Product) ON (n.nova);
+SHOW CONSTRAINTS;
